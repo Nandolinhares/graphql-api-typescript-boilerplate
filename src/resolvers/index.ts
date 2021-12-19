@@ -1,20 +1,9 @@
-import { Books } from '../domain/models/books';
-
-const books: Books[] = [
-  {
-    title: 'The Awakening',
-    author: 'Kate Chopin',
-  },
-  {
-    title: 'City of Glass',
-    author: 'Paul Auster',
-  },
-];
+import { getBooks } from '../domain/usecases/getBooks';
 
 // Resolvers define the technique for fetching the types defined in the
 // schema. This resolver retrieves books from the "books" array above.
 export const resolvers = {
   Query: {
-    books: () => books,
+    books: getBooks,
   },
 };
